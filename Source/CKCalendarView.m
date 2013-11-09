@@ -483,6 +483,14 @@
     [self.delegate calendar:self didSelectDate:date];
     [self setNeedsLayout];
 }
+- (NSDate *)getSelectedDate
+{
+    return self.selectedDate;
+}
+- (void)setDesiredDate:(NSDate *)date
+{
+    [self selectDate:date makeVisible:YES];
+}
 
 #pragma mark - Theming getters/setters
 

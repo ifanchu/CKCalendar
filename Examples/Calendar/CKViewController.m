@@ -43,8 +43,31 @@
         self.view.backgroundColor = [UIColor whiteColor];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localeDidChange) name:NSCurrentLocaleDidChangeNotification object:nil];
+        
+        UIButton *showSelectedDateBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [showSelectedDateBtn addTarget:self action:@selector(clickShowSelectedDateButton:) forControlEvents:UIControlEventTouchDown];
+        [showSelectedDateBtn setTitle:@"Show Selected Date" forState:UIControlStateNormal];
+        showSelectedDateBtn.frame = CGRectMake(80.0f, 300.0f, 160.0f, 40.0f);
+        [self.view addSubview:showSelectedDateBtn];
+        
+        UIButton *setTodayBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [setTodayBtn addTarget:self action:@selector(clickSetTodayButton:) forControlEvents:UIControlEventTouchDown];
+        [setTodayBtn setTitle:@"Today" forState:UIControlStateNormal];
+        setTodayBtn.frame = CGRectMake(80.0f, 350.0f, 160.0f, 40.0f);
+        [self.view addSubview:setTodayBtn];
     }
     return self;
+}
+
+- (IBAction)clickShowSelectedDateButton:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [[[UIAlertView alloc] initWithTitle:@"Selected Date" message:[self.dateFormatter stringFromDate:self.calendar.getSelectedDate] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+}
+- (IBAction)clickSetTodayButton:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self.calendar setDesiredDate:[NSDate date]];
 }
 
 - (void)dealloc {

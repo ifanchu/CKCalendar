@@ -65,6 +65,9 @@ typedef enum {
 - (BOOL)date:(NSDate *)date1 isSameDayAsDate:(NSDate *)date2;
 - (BOOL)dateIsInCurrentMonth:(NSDate *)date;
 
+- (NSDate *)getSelectedDate;
+- (void)setDesiredDate:(NSDate *)date;
+
 @end
 
 @protocol CKCalendarDelegate <NSObject>

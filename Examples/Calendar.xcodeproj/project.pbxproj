@@ -149,6 +149,8 @@
 /* Begin PBXProject section */
 		001D2391395A8710F3E85A45 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1D2391395A8710F3E85A46 /* Build configuration list for PBXProject "Calendar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -295,6 +297,7 @@
 				1D2391395A8710F3E85A4F /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
